@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IronAim</title>
+    <link rel="shortcut icon" href="./images/IronAim Logo.jpg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <section id="start-screen">
+      <div class="logo-container">
+        <div class="logo-icon">
+          <img
+            id="game-logo"
+            src="./images/IronAimLogov2.png"
+            alt="IronAim Game Logo"
+          />
+        </div>
+
+        <div class="logo-text">
+          <img
+            id="game-logo-letter"
+            src="./images/IronAimLetterLogo.png"
+            alt="Iron Aim Letter Logo"
+          />
+        </div>
+      </div>
+
+      <div id="instructions">
+        <h2>Instructions</h2>
+        <ul>
+          <li>You have 30s to hit the maximum amount of targets</li>
+          <li>Click on the target to score a point</li>
+          <li>
+            Select a character to choose your difficulty and start the game
+          </li>
+        </ul>
+      </div>
+      <div>Ready to Shoot?</div>
+      <div id="char-select">
+        <ul>
+          <li><button id="char1-button">Human</button></li>
+          <li><button id="char2-button">Spidey</button></li>
+          <li><button id="char3-button">Jarvis</button></li>
+        </ul>
+      </div>
+    </section>
+    <section id="game-screen">
+      <div id="game-area"></div>
+      <div id="info-container">
+        <div id="timer"></div>
+        <div id="score"></div>
+      </div>
+    </section>
+    <section id="score-screen">
+      <div id="prop-sentence"></div>
+      <div id="score-recap"></div>
+      <ol id="highest-scores">
+        High Scores
+      </ol>
+      <button id="restart-button">Restart</button>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
