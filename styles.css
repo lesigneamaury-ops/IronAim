@@ -110,6 +110,34 @@ body::before {
   color: #ff5c8a;
 }
 
+#player-name-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+#player-name-container div {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  color: #ff5c8a;
+}
+
+#player-name {
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 999px;
+  border: 2px solid #ff5c8a;
+  background: rgba(0, 0, 0, 0.7);
+  color: #f5f5f5;
+  outline: none;
+}
+
+#player-name::placeholder {
+  color: #aaa;
+}
+
 #start-screen > div:nth-of-type(3) {
   font-size: 26px;
   text-transform: uppercase;

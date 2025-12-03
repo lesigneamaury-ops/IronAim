@@ -12,10 +12,13 @@ const propSentenceElement = document.getElementById("prop-sentence");
 const scoreRecapElement = document.getElementById("score-recap");
 const highestScoresElement = document.getElementById("highest-scores");
 const restartButtonElement = document.getElementById("restart-button");
+const playerNameInputElement = document.getElementById("player-name");
 
+let playerName = "No One";
 let difficulty = "";
 
 char1Element.addEventListener("click", () => {
+  playerName = playerNameInputElement.value.trim() || "No One";
   difficulty = "human";
   goToGameScreen();
   createGrid();
@@ -25,6 +28,7 @@ char1Element.addEventListener("click", () => {
 });
 
 char2Element.addEventListener("click", () => {
+  playerName = playerNameInputElement.value.trim() || "No One";
   difficulty = "Spidey";
   goToGameScreen();
   createGrid();
@@ -34,6 +38,7 @@ char2Element.addEventListener("click", () => {
 });
 
 char3Element.addEventListener("click", () => {
+  playerName = playerNameInputElement.value.trim() || "No One";
   difficulty = "Jarvis";
   goToGameScreen();
   createGrid();
@@ -78,16 +83,13 @@ function showRandomTargets() {
   for (let i = 0; i < cells.length; i++) {
     cells[i].classList.remove("target");
   }
-
   const usedIndices = [];
-
   while (usedIndices.length < 3) {
     const randomIndex = Math.floor(Math.random() * cells.length);
     if (!usedIndices.includes(randomIndex)) {
       usedIndices.push(randomIndex);
     }
   }
-
   for (let i = 0; i < usedIndices.length; i++) {
     const index = usedIndices[i];
     cells[index].classList.add("target");
@@ -113,6 +115,7 @@ function startTimer() {
     }
   }, 1000);
 }
+
 function scorePoint() {
   score++;
   scoreElement.innerText = `Score: ${score} points.`;
@@ -154,23 +157,31 @@ function gotoScoreScreen() {
     }
   }
   scoreRecapElement.innerText = `You hit ${score} targets!`;
-
-  const highestScoresFromLS = JSON.parse(
-    localStorage.getItem("highest-scores")
-  );
-  if (!highestScoresFromLS) {
-    localStorage.setItem("highest-scores", JSON.stringify([score]));
-  } else {
-    highestScoresFromLS.push(score);
-    highestScoresFromLS.sort((a, b) => b - a);
-    const topFiveScores = highestScoresFromLS.splice(0, 5);
-    localStorage.setItem("highest-scores", JSON.stringify(topFiveScores));
-    topFiveScores.forEach((oneScore) => {
-      const ourLiElement = document.createElement("li");
-      ourLiElement.innerText = oneScore;
-      highestScoresElement.appendChild(ourLiElement);
-    });
+  highestScoresFromLS = JSON.parse(localStorage.getItem("highest-scores"));
+  if (!Array.isArray(highestScoresFromLS)) {
+    highestScoresFromLS = [];
   }
+
+  if (
+    highestScoresFromLS.length > 0 &&
+    typeof highestScoresFromLS[0] === "number"
+  ) {
+    highestScoresFromLS = [];
+  }
+  const finalScore = {
+    name: playerName,
+    score: score,
+  };
+  highestScoresFromLS.push(finalScore);
+  highestScoresFromLS.sort((a, b) => b.score - a.score);
+  const topFiveScores = highestScoresFromLS.slice(0, 5);
+  localStorage.setItem("highest-scores", JSON.stringify(topFiveScores));
+  highestScoresElement.innerHTML = "";
+  topFiveScores.forEach((oneScore) => {
+    const ourLiElement = document.createElement("li");
+    ourLiElement.innerText = `${oneScore.name} — ${oneScore.score}`;
+    highestScoresElement.appendChild(ourLiElement);
+  });
 }
 
 function restartGame() {

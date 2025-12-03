@@ -17,7 +17,7 @@ IronAim challenges the player’s **reaction time and accuracy**.
 - Each successful click increases the score.
 - The game ends when the timer reaches zero.
 - The final score is displayed on a dedicated results screen.
-- High scores are saved using **localStorage**.
+- High scores and the name of the player are saved using **localStorage**.
 
 ---
 
@@ -42,7 +42,7 @@ IronAim challenges the player’s **reaction time and accuracy**.
    - Displays:
      - Final score
      - A custom feedback message
-     - Stored best scores
+     - Stored best scores with the player name associated
    - A **Restart** button allows the player to play again.
 
 ---
@@ -75,7 +75,7 @@ Technically, difficulty is handled by adjusting the interval delay used by `setI
 
 IronAim uses the **Web Storage API (`localStorage`)** to store player scores.
 
-- Scores are saved locally in the browser.
+- Scores are saved as an object locally in the browser.
 - Data persists even after refreshing or reopening the page.
 - Stored scores can be retrieved and displayed on the score screen.
 
@@ -83,20 +83,41 @@ IronAim uses the **Web Storage API (`localStorage`)** to store player scores.
 
 ## Ressources used
 
--Iron hack lessons
+- Ironhack lessons
 
 - MDN – Manipulation du DOM
-  - <https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction>
-  - <https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector>
+
+  - https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
+  - https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
+
 - MDN – `addEventListener`
 
-  - <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener>
+  - https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
 
 - MDN – `setInterval` / `clearInterval`
-  - <https://developer.mozilla.org/en-US/docs/Web/API/setInterval>
-  - <https://developer.mozilla.org/en-US/docs/Web/API/clearInterval>
-- MDN – `Math.random()`
-  - <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random>
-- Wikipedia – Fisher–Yates shuffle <https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle>
 
--AI Assistant: ChatGPT 5.1 : Reviewing code syntax error, generate assets, CSS styling
+  - https://developer.mozilla.org/en-US/docs/Web/API/setInterval
+  - https://developer.mozilla.org/en-US/docs/Web/API/clearInterval
+
+- MDN – `Math.random()`
+
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+
+- Wikipedia – Fisher–Yates shuffle  
+  https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+
+- MDN – Web Storage API (`localStorage`)
+
+  - https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API
+  - https://developer.mozilla.org/en-US/docs/Web/API/Storage/getItem
+  - https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem
+
+- MDN – JSON methods (`JSON.parse`, `JSON.stringify`)
+
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+
+- AI Assistant: ChatGPT 5.1
+  - Reviewing code syntax errors
+  - Generating visual assets
+  - CSS styling assistance
