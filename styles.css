@@ -246,6 +246,41 @@ body::before {
 #score-recap {
   font-size: 22px;
 }
+#highest-scores {
+  margin: 0;
+  padding: 18px 24px;
+  max-width: 320px;
+  background: rgba(10, 5, 8, 0.9);
+  border-radius: 18px;
+  border: 2px solid #ff5c8a;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 18px rgba(255, 92, 138, 0.6);
+  font-size: 18px;
+  text-align: left;
+
+  list-style-position: inside;
+}
+
+#highest-scores li {
+  margin: 6px 0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(122, 27, 50, 0.25);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#highest-scores li::marker {
+  color: #ff5c8a;
+  font-weight: 700;
+}
+
+#highest-scores li:first-child {
+  background: rgba(255, 92, 138, 0.3);
+  border: 1px solid rgba(255, 92, 138, 0.9);
+  box-shadow: 0 0 14px rgba(255, 92, 138, 0.8);
+}
 
 #restart-button {
   padding: 10px 24px;
