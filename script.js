@@ -180,6 +180,7 @@ function restartGame() {
   timeRemaining = 30;
   cells = [];
   gameAreaElement.innerHTML = "";
+  highestScoresElement.innerHTML = "";
   gameScreenElement.classList.remove("show-screen");
   ScoreScreenElement.style.display = "none";
   startScreenElement.style.display = "flex";

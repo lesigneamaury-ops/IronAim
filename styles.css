@@ -198,8 +198,8 @@ body::before {
   pointer-events: auto;
   background: radial-gradient(
     circle at center,
-    #ff5c8a 0%,
-    #ff5c8a 20%,
+    #8a0128 0%,
+    #fe0048 20%,
     #f5f5f5 21%,
     #f5f5f5 40%,
     #7a1b32 41%,
