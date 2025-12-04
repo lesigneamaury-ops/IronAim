@@ -85,7 +85,7 @@ IronAim uses the **Web Storage API (`localStorage`)** to store player scores.
 
 - Ironhack lessons
 
-- MDN – Manipulation du DOM
+- MDN – DOM Manipulation
 
   - https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
   - https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector

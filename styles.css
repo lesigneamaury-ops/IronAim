@@ -327,3 +327,74 @@ body::before {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
   transform: translateY(-2px);
 }
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  /* Start screen */
+  #start-screen {
+    gap: 20px;
+    padding: 12px;
+  }
+
+  .logo-container {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  #game-logo {
+    height: 150px;
+  }
+
+  #game-logo-letter {
+    height: 48px;
+  }
+
+  #instructions {
+    max-width: 92vw;
+    padding: 16px 18px;
+    font-size: 14px;
+  }
+
+  #instructions h2 {
+    font-size: 20px;
+  }
+
+  /* Character buttons */
+  #char-select button {
+    width: 90px;
+    height: 90px;
+    font-size: 14px;
+  }
+
+  /* Game screen */
+  #game-screen.show-screen {
+    gap: 16px;
+    padding: 12px;
+  }
+
+  #game-area {
+    width: min(92vw, 92vh);
+    height: min(92vw, 92vh);
+  }
+
+  #info-container {
+    gap: 16px;
+    font-size: 16px;
+  }
+
+  #timer,
+  #score {
+    font-size: 16px;
+    padding: 6px 12px;
+  }
+
+  /* Score screen */
+  #prop-sentence {
+    font-size: 22px;
+    padding: 14px 20px;
+  }
+
+  #score-recap {
+    font-size: 18px;
+  }
+}
